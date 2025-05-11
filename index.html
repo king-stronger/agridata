@@ -7,6 +7,133 @@
     <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
-    
+    <div id="app">
+        <nav class="nav">
+            <h1 class="brand">Farm management</h1>
+
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="/overview" class="nav-link">Overview</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/crops" class="nav-link">Crops</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/weather" class="nav-link">Weather</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/Soil" class="nav-link">Soils</a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="main">
+            <section class="stats-section">
+                <h2>Summary</h2>
+                <ul class="stats">
+                    <li class="stat">
+                        <div class="stat-main">
+                            <div>
+                                <h3>Nombre de Parcelles</h3>
+                                <span>25</span>
+                            </div>
+                            <i class="icon stat-icon bx bx-edit"></i>
+                        </div>
+                        <p class="stat-description">Nombre total de parcelles cultivées sur l'ensemble de la ferme.</p>
+                    </li>
+                    <li class="stat">
+                        <div class="stat-main">
+                            <div>
+                                <h3>Nombre de Cultures</h3>
+                                <span>7</span>
+                            </div>
+                            <i class="icon stat-icon bx bx-edit"></i>
+                        </div>
+                        <p class="stat-description">Variétés de cultures cultivées sur les parcelles.</p>
+                    </li>
+                    <li class="stat">
+                        <div class="stat-main">
+                            <div>
+                                <h3>Production Totale</h3>
+                                <span>17 500 Tonnes</span>
+                            </div>
+                            <i class="icon stat-icon bx bx-edit"></i>
+                        </div>
+                        <p class="stat-description">Total des récoltes en tonnes sur toutes les parcelles cultivées.</p>
+                    </li>
+                    <li class="stat">
+                        <div class="stat-main">
+                            <div>
+                                <h3>Superficie Totale Récoltée</h3>
+                                <span>43 Ha</span>
+                            </div>
+                            <i class="icon stat-icon bx bx-edit"></i>
+                        </div>
+                        <p class="stat-description">Surface totale récoltée en hectares.</p>
+                    </li>
+                    <li class="stat">
+                        <div class="stat-main">
+                            <div>
+                                <h3>Rendement Total</h3>
+                                <span>400,2 T/Ha</span>
+                            </div>
+                            <i class="icon stat-icon bx bx-edit"></i>
+                        </div>
+                        <p class="stat-description">Quantité moyenne de production (en tonnes) par hectare de culture.</p>
+                    </li>
+                </ul>                
+            </section>
+            <section class="weather-section">
+                <h2>Weather forecast</h2>
+                <div class="weather-actual">
+                    <span class="date">Today</span>
+                    <span class="temperature">37 / 23</span>
+                    <span class="summary">Rainy Cloudy</span>
+                </div>
+                <ul class="weather-forecast">
+                    <li class="weather">
+                        <span class="date">25 June</span>
+                        <span class="temperature">29</span>
+                        <span class="summary">Thunderstorm</span>
+                    </li>
+                    <li class="weather">
+                        <span class="date">26 June</span>
+                        <span class="temperature">32</span>
+                        <span class="summary">Rainy Cloudy</span>
+                    </li>
+                    <li class="weather">
+                        <span class="date">27 June</span>
+                        <span class="temperature">39</span>
+                        <span class="summary">Semi cloudy</span>
+                    </li>
+                    <li class="weather">
+                        <span class="date">28 June</span>
+                        <span class="temperature">42</span>
+                        <span class="summary">Sunny - humidity</span>
+                    </li>
+                </ul>
+            </section>
+            <section class="production-section">
+                <div class="chart-wrapper">
+                    <h3 class="chart-title">Production Totale par Année</h3>
+                    <div class="chart"></div>
+                </div>
+            </section>
+
+            <section class="area-harvested-section">
+                <div class="chart-wrapper">
+                    <h3 class="chart-title">Superficie Récoltée par Année</h3>
+                    <div class="chart"></div>
+                </div>
+            </section>
+
+            <section class="yield-section">
+                <div class="chart-wrapper">
+                    <h3 class="chart-title">Rendement par Année</h3>
+                    <div class="chart"></div>
+                </div>
+            </section>
+        </main>
+    </div>
 </body>
 </html>
