@@ -1,0 +1,254 @@
+@layer reset, base, layout, component, utilities;
+
+:root {
+    --flow: 1rem;
+
+    /*************** Colors variables ***************/
+    --clr-black: hsl(0, 0%, 0%);
+    --clr-dark: hsl(135, 0%, 0%);
+    --clr-text: hsl(135, 0%, 20%);
+    --clr-red: hsl(360, 71%, 45%);
+    --clr-link: hsl(200, 71%, 45%);
+    --clr-blue: hsl(210, 71%, 45%);
+    --clr-green: hsl(150, 71%, 45%);
+    --clr-light: hsl(135, 0%, 100%);
+    --clr-accent: hsl(30, 71%, 45%);
+    --clr-white: hsl(100, 100%, 100%);
+    --clr-primary: hsl(135, 57%, 36%);
+    --clr-container: hsl(135, 46%, 80%);
+    --clr-background: hsl(135, 63%, 97%);
+    --clr-container-alt: hsl(135, 0%, 100%);
+
+
+
+    /*************** Font sizes variables ***************/
+    --fs-100: clamp(0.64rem, 0.7134rem + -0.0947vw, 0.6944rem);
+    --fs-200: clamp(0.8rem, 0.8449rem + -0.058vw, 0.8333rem);
+    --fs-300: clamp(1rem, 1rem + 0vw, 1rem);
+    --fs-400: clamp(1.2rem, 1.1826rem + 0.087vw, 1.25rem);
+    --fs-500: clamp(1.44rem, 1.3974rem + 0.213vw, 1.5625rem);
+    --fs-600: clamp(1.728rem, 1.6497rem + 0.3915vw, 1.9531rem);
+    --fs-700: clamp(2.0736rem, 1.9457rem + 0.6397vw, 2.4414rem);
+    --fs-800: clamp(2.4883rem, 2.2923rem + 0.9799vw, 3.0518rem);
+    --fs-900: clamp(2.986rem, 2.6977rem + 1.4412vw, 3.8147rem);
+}
+
+@layer reset {
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        font: inherit;
+    }
+    
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    body {
+        min-height: 100dvh;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        line-height: 1.2;
+        text-wrap: balance;
+    }
+    
+    p, li, span, small {
+        max-width: 70ch;
+        line-height: 1.6;
+        font-weight: 300;
+        text-wrap: pretty;
+    }
+    
+    ul {
+        list-style-type: none;
+    }
+    
+    a {
+        text-decoration: none;
+        color: var(--clr-black);
+    }
+    
+    button {
+        border: none;
+        background: none;
+    }
+    
+    img, video, picture, svg {
+        display: block;
+        max-width: 100%;
+    }
+
+    input, textarea, select {
+        width: 100%;
+        padding: .5rem 1rem;
+        border-radius: 1rem;
+        color: var(--clr-text);
+        border: 1px solid var(--clr-dark);
+        background-color: var(--clr-white);
+    }
+
+    :is(input, textarea, select):focus {
+        outline: none;
+        border: 2px solid var(--clr-accent);
+    }
+}
+
+@layer utilities {
+    /****************************** STRUCTURE ******************************/
+    .flow > * + * {
+        margin-top: var(--flow);
+    }
+
+    .flow-sm > * + * {
+        margin-top: calc(var(--flow) / 2);
+    }
+
+    .flow-md > * + * {
+        margin-top: calc(var(--flow) * 2);
+    }
+
+    .flow-lg > * + * {
+        margin-top: calc(var(--flow) * 4);
+    }
+
+    .flow-xl > * + * {
+        margin-top: calc(var(--flow) * 8);
+    }
+
+    .align-content-right {
+        display: flex;
+        justify-content: end;
+    }
+    /****************************** STRUCTURE ******************************/
+
+
+    /****************************** TYPOGRAPHY ******************************/
+    .text-max {
+        font-size: var(--fs-900);
+    }
+
+    .text-xxx {
+        font-size: var(--fs-800);
+    }
+
+    .text-xxl {
+        font-size: var(--fs-700);
+    }
+
+    .text-xl {
+        font-size: var(--fs-600);
+    }
+
+    .text-lg {
+        font-size: var(--fs-500);
+    }
+    
+    .text-md {
+        font-size: var(--fs-400);
+    }
+
+    .text {
+        font-size: var(--fs-300);
+    }
+
+    .text-sm {
+        font-size: var(--fs-200);
+    }
+
+    .text-xs {
+        font-size: var(--fs-100);
+    }
+
+    .text-center {
+        text-align: center;
+    }
+    /****************************** TYPOGRAPHY ******************************/
+
+    /****************************** BUTTON ******************************/
+    .btn, .btn-sm, .btn-lg {
+        cursor: pointer;
+        user-select: none;
+        text-align: center;
+        border-radius: 1rem;
+        display: inline-block;
+    }
+
+    .btn {
+        padding: .5rem 1rem;
+    }
+
+    .btn-sm {
+        padding: .25rem .5rem;
+    }
+
+    .btn-lg {
+        padding: 1rem 1.5rem;
+    }
+
+    .btn-primary {
+        color: var(--clr-white);
+        background-color: var(--clr-primary);
+    }
+
+    .btn-primary-alt {
+        color: var(--clr-black);
+        background-color: var(--clr-container);
+    }
+
+    .btn-secondary {
+        color: var(--clr-primary);
+        background-color: var(--clr-light);
+        border: 1px solid var(--clr-primary);
+    }
+
+    .btn-primary:hover, .btn-primary:active,
+    .btn-secondary:hover, .btn-secondary:active {
+        border: none;
+        color: var(--clr-white);
+        background-color: var(--clr-accent);
+    }
+    /****************************** BUTTON ******************************/
+
+    /*************************** Links ******************************/
+    .link, .link-alt {
+        padding: 0;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    .link {
+        color: var(--clr-link);
+    }
+
+    .link-alt {
+        color: var(--clr-dark);
+    }
+
+    .link:hover, .link:active,
+    .link-alt:hover, .link-alt:active {
+        color: var(--clr-accent);
+    }
+    /*************************** Links ******************************/
+
+
+
+    /*************************** Others ******************************/
+    .icon {
+        font-size: var(--fs-400);
+    }
+
+    .icon-md {
+        font-size: var(--fs-500);
+    }
+
+    .icon-lg {
+        font-size: var(--fs-600);
+    }
+    /*************************** Others ******************************/
+}
