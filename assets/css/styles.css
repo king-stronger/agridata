@@ -123,6 +123,15 @@
                 color: var(--clr-accent);
             }
         }
+
+        .is-active {
+            border-radius: .5rem;
+            outline: 1px solid var(--clr-accent);
+            
+            .nav-link, .nav-icon {
+                color: var(--clr-accent);
+            }
+        }
     }
     /****************************** HEADER & NAV ******************************/
 
