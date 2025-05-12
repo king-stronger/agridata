@@ -7,16 +7,13 @@
     --clr-black: hsl(0, 0%, 0%);
     --clr-dark: hsl(135, 0%, 0%);
     --clr-text: hsl(135, 0%, 30%);
-    --clr-red: hsl(360, 71%, 45%);
     --clr-link: hsl(200, 71%, 45%);
-    --clr-blue: hsl(210, 71%, 45%);
-    --clr-green: hsl(150, 71%, 45%);
     --clr-light: hsl(135, 0%, 100%);
     --clr-accent: hsl(30, 71%, 45%);
     --clr-white: hsl(100, 100%, 100%);
     --clr-primary: hsl(135, 57%, 36%);
     --clr-container: hsl(135, 46%, 80%);
-    --clr-background: hsl(135, 63%, 96%);
+    --clr-background: hsl(60, 33%, 96%);
     --clr-container-alt: hsl(135, 0%, 100%);
 
 
@@ -100,9 +97,9 @@
 
 @layer base {
     #app {
-        background: var(--clr-background);
+        background-color: var(--clr-background);
     }
-    
+
     /****************************** HEADER & NAV ******************************/
     .header {
         background: var(--clr-white);
@@ -129,6 +126,14 @@
     }
     /****************************** HEADER & NAV ******************************/
 
+    /****************************** STATS SECTION ******************************/
+    .stat {
+        border-radius: .5rem;
+        background-color: var(--clr-container);
+    }
+    /****************************** STATS SECTION ******************************/
+
+
 
     /****************************** WEATHER SECTION ******************************/
     .weather {
@@ -142,8 +147,7 @@
     .chart {
         border-radius: 1rem;
         background-color: var(--clr-white);
-        border: 1px solid var(--clr-container);
-        box-shadow: 0 0 1px 0 var(--clr-container);
+        box-shadow: 0 0 1px 0 var(--clr-text);
     }
     /****************************** CHART SECTIONS ******************************/
 }
@@ -171,10 +175,14 @@
     .main .wrapper {
         display: grid;
         gap: 2rem 4rem;
+        padding-block: 2rem;
         grid-template-columns: repeat(auto-fit, minmax(min(100%, 275px), 1fr));
 
         .main-section {
             grid-column: span 2;
+
+            display: grid;
+            row-gap: 5rem;
         }
 
         .secondary-section {
@@ -186,8 +194,12 @@
     /****************************** STATS SECTION ******************************/
     .stats {
         display: grid;
-        gap: 2rem 3rem;
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 175px), 1fr));
+        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 185px), 1fr));
+    }
+
+    .stat {
+        padding: 1rem;
     }
     /****************************** STATS SECTION ******************************/
 
