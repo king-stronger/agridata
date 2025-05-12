@@ -16,7 +16,7 @@
     --clr-white: hsl(100, 100%, 100%);
     --clr-primary: hsl(135, 57%, 36%);
     --clr-container: hsl(135, 46%, 80%);
-    --clr-background: hsl(135, 33%, 97%);
+    --clr-background: hsl(135, 63%, 96%);
     --clr-container-alt: hsl(135, 0%, 100%);
 
 
@@ -103,7 +103,7 @@
         background: var(--clr-background);
     }
     
-    /****************************** NAV ******************************/
+    /****************************** HEADER & NAV ******************************/
     .header {
         background: var(--clr-white);
     }
@@ -127,14 +127,30 @@
             }
         }
     }
-    /****************************** NAV ******************************/
+    /****************************** HEADER & NAV ******************************/
 
 
+    /****************************** WEATHER SECTION ******************************/
+    .weather {
+        border-radius: .5rem;
+        background: var(--clr-container);
+    }
+    /****************************** WEATHER SECTION ******************************/
+
+
+    /****************************** CHART SECTIONS ******************************/
+    .chart {
+        border-radius: 1rem;
+        background-color: var(--clr-white);
+        border: 1px solid var(--clr-container);
+        box-shadow: 0 0 1px 0 var(--clr-container);
+    }
+    /****************************** CHART SECTIONS ******************************/
 }
 
 
 @layer layout {
-    /****************************** NAV ******************************/
+    /****************************** HEADER & NAV ******************************/
     .header {
         padding: 1rem;
     }
@@ -149,7 +165,59 @@
             align-items: center;
         }
     }
-    /****************************** NAV ******************************/
+    /****************************** HEADER & NAV ******************************/
+
+    /****************************** MAIN ******************************/
+    .main .wrapper {
+        display: grid;
+        gap: 2rem 4rem;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 275px), 1fr));
+
+        .main-section {
+            grid-column: span 2;
+        }
+
+        .secondary-section {
+            grid-column: 3 / 4;
+        }
+    }
+    /****************************** MAIN ******************************/
+
+    /****************************** STATS SECTION ******************************/
+    .stats {
+        display: grid;
+        gap: 2rem 3rem;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 175px), 1fr));
+    }
+    /****************************** STATS SECTION ******************************/
+
+
+    /****************************** WEATHER SECTION ******************************/
+    .weather-section {
+        display: grid;
+        row-gap: 1rem;
+    }
+
+    .weather-forecast {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+    }
+
+    .weather {
+        display: flex;
+        row-gap: 1rem;
+        padding: 1rem;
+        flex-direction: column;
+    }
+    /****************************** WEATHER SECTION ******************************/
+
+
+    /****************************** CHART SECTIONS ******************************/
+    .chart {
+        padding: 1rem;
+    }
+    /****************************** CHART SECTIONS ******************************/
 }
 
 
