@@ -6,7 +6,7 @@
     /*************** Colors variables ***************/
     --clr-black: hsl(0, 0%, 0%);
     --clr-dark: hsl(135, 0%, 0%);
-    --clr-text: hsl(135, 0%, 20%);
+    --clr-text: hsl(135, 0%, 30%);
     --clr-red: hsl(360, 71%, 45%);
     --clr-link: hsl(200, 71%, 45%);
     --clr-blue: hsl(210, 71%, 45%);
@@ -16,7 +16,7 @@
     --clr-white: hsl(100, 100%, 100%);
     --clr-primary: hsl(135, 57%, 36%);
     --clr-container: hsl(135, 46%, 80%);
-    --clr-background: hsl(135, 63%, 97%);
+    --clr-background: hsl(135, 33%, 97%);
     --clr-container-alt: hsl(135, 0%, 100%);
 
 
@@ -98,8 +98,68 @@
     }
 }
 
+@layer base {
+    #app {
+        background: var(--clr-background);
+    }
+    
+    /****************************** NAV ******************************/
+    .header {
+        background: var(--clr-white);
+    }
+
+    .nav {
+
+        .nav-item {
+            padding: .5rem 1rem;
+        }
+
+        .nav-link, .nav-icon {
+            color: var(--clr-text);
+        }
+
+        .nav-item:hover {
+            border-radius: .5rem;
+            outline: 1px solid var(--clr-accent);
+            
+            .nav-link, .nav-icon {
+                color: var(--clr-accent);
+            }
+        }
+    }
+    /****************************** NAV ******************************/
+
+
+}
+
+
+@layer layout {
+    /****************************** NAV ******************************/
+    .header {
+        padding: 1rem;
+    }
+    
+    .nav {
+        display: flex;
+        column-gap: 1rem;
+
+        .nav-item {
+            display: flex;
+            column-gap: .5rem;
+            align-items: center;
+        }
+    }
+    /****************************** NAV ******************************/
+}
+
+
 @layer utilities {
     /****************************** STRUCTURE ******************************/
+    .wrapper {
+        margin-inline: auto;
+        width: min(100% - 2rem, 1280px);    
+    }
+
     .flow > * + * {
         margin-top: var(--flow);
     }
