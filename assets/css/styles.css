@@ -13,7 +13,7 @@
     --clr-white: hsl(100, 100%, 100%);
     --clr-primary: hsl(135, 57%, 36%);
     --clr-container: hsl(135, 46%, 80%);
-    --clr-background: hsl(60, 33%, 96%);
+    --clr-background: hsl(60, 63%, 96%);
     --clr-container-alt: hsl(135, 0%, 100%);
 
 
@@ -156,7 +156,7 @@
     .chart {
         border-radius: 1rem;
         background-color: var(--clr-white);
-        box-shadow: 0 0 1px 0 var(--clr-text);
+        box-shadow: 0 0 1px 0 var(--clr-container);
     }
     /****************************** CHART SECTIONS ******************************/
 }
@@ -216,7 +216,16 @@
     /****************************** WEATHER SECTION ******************************/
     .weather-section {
         display: grid;
-        row-gap: 1rem;
+        row-gap: 2rem;
+    }
+
+    .weather-actual {
+        gap: 2rem;
+        display: flex;
+    }
+
+    .weather-info {
+        display: grid;
     }
 
     .weather-forecast {
