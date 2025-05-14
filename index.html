@@ -34,88 +34,85 @@
 
         <main class="main">
             <div class="wrapper">
-                <section class="main-section">
-                    <article class="stats-section flow">
-                        <h2 class="text-md">Summary</h2>
-                        <ul class="stats">
-                            <li class="stat">
-                                <h3 class="text">Nombre de Parcelles</h3>
-                                <span class="text-xl">25</span>
-                            </li>
-                            <li class="stat">
-                                <h3 class="text">Nombre de Cultures</h3>
-                                <span class="text-xl">7</span>
-                            </li>
-                            <li class="stat">
-                                <h3 class="text">Production Totale</h3>
-                                <span class="text-xl">17 500 Tonnes</span>
-                            </li>
-                            <li class="stat">
-                                <h3 class="text">Superficie Totale Récoltée</h3>
-                                <span class="text-xl">43 Ha</span>
-                            </li>
-                            <li class="stat">
-                                <h3 class="text">Rendement Total</h3>
-                                <span class="text-xl">400,2 T/Ha</span>
-                            </li>
-                        </ul>                
-                    </article>
-                    <article class="production-section">
-                        <div class="chart-wrapper flow">
-                            <h3 class="chart-title text-md">Production Totale par Année</h3>
-                            <div class="chart"></div>
-                        </div>
-                    </article>
-        
-                    <article class="area-harvested-section">
-                        <div class="chart-wrapper flow">
-                            <h3 class="chart-title text-md">Superficie Récoltée par Année</h3>
-                            <div class="chart"></div>
-                        </div>
-                    </article>
-        
-                    <article class="yield-section">
-                        <div class="chart-wrapper flow">
-                            <h3 class="chart-title text-md">Rendement par Année</h3>
-                            <div class="chart"></div>
-                        </div>
-                    </article>
+                <section class="summary-stats-section flow">
+                    <h2 class="text-lg">Summary</h2>
+                    <ul class="summary-stats">
+                        <li class="summary-stat">
+                            <h3 class="text">Nombre de Parcelles</h3>
+                            <span class="text-xl">25</span>
+                        </li>
+                        <li class="summary-stat">
+                            <h3 class="text">Nombre de Cultures</h3>
+                            <span class="text-xl">7</span>
+                        </li>
+                        <li class="summary-stat">
+                            <h3 class="text">Production Totale</h3>
+                            <span class="text-xl">17 500 T</span>
+                        </li>
+                        <li class="summary-stat">
+                            <h3 class="text">Superficie Totale Récoltée</h3>
+                            <span class="text-xl">43 Ha</span>
+                        </li>
+                        <li class="summary-stat">
+                            <h3 class="text">Rendement Total</h3>
+                            <span class="text-xl">400,2 T/Ha</span>
+                        </li>
+                    </ul>                
                 </section>
 
-                <section class="secondary-section">
-                    <article class="weather-section">
-                        <h2 class="text-md">Weather forecast</h2>
-                        <div class="weather-actual">
-                            <img src="/assets/img/icon.png" alt="Weather icon">
-                            <div class="weather-info">
-                                <span class="text-md">Today</span>
-                                <span class="text-xl">37 / 23</span>
-                                <span class="text-sm">Rainy Cloudy</span>
-                            </div>
+                <section class="weather-section">
+                    <h2 class="text-lg">Weather forecast</h2>
+                    <div class="weather-actual">
+                        <img src="/assets/img/icon.png" alt="Weather icon">
+                        <div class="weather-info">
+                            <span class="text-md">Today</span>
+                            <span class="text-xl">37 / 23</span>
+                            <span class="text-sm">Rainy Cloudy</span>
                         </div>
-                        <ul class="weather-forecast">
-                            <li class="weather">
-                                <h3 class="text-center">25 June</h3>
-                                <span class="text-xxl">29</span>
-                                <span class="text-sm">Thunderstorm</span>
-                            </li>
-                            <li class="weather">
-                                <h3 class="text-center">26 June</h3>
-                                <span class="text-xxl">32</span>
-                                <span class="text-sm">Rainy Cloudy</span>
-                            </li>
-                            <li class="weather">
-                                <h3 class="text-center">27 June</h3>
-                                <span class="text-xxl">39</span>
-                                <span class="text-sm">Semi cloudy</span>
-                            </li>
-                            <li class="weather">
-                                <h3 class="text-center">28 June</h3>
-                                <span class="text-xxl">42</span>
-                                <span class="text-sm">Sunny - humidity</span>
-                            </li>
-                        </ul>
-                    </article>
+                    </div>
+                    <ul class="weather-forecast">
+                        <li class="weather">
+                            <h3 class="text-center">25 June</h3>
+                            <span class="text-xxl">29</span>
+                            <span class="text-sm">Thunderstorm</span>
+                        </li>
+                        <li class="weather">
+                            <h3 class="text-center">26 June</h3>
+                            <span class="text-xxl">32</span>
+                            <span class="text-sm">Rainy Cloudy</span>
+                        </li>
+                        <li class="weather">
+                            <h3 class="text-center">27 June</h3>
+                            <span class="text-xxl">39</span>
+                            <span class="text-sm">Semi cloudy</span>
+                        </li>
+                        <li class="weather">
+                            <h3 class="text-center">28 June</h3>
+                            <span class="text-xxl">42</span>
+                            <span class="text-sm">Sunny - humidity</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="production-section">
+                    <div class="chart-wrapper flow">
+                        <h3 class="chart-title text-lg">Production Totale par Année</h3>
+                        <div class="chart"></div>
+                    </div>
+                </section>
+    
+                <section class="area-harvested-section">
+                    <div class="chart-wrapper flow">
+                        <h3 class="chart-title text-lg">Superficie Récoltée par Année</h3>
+                        <div class="chart"></div>
+                    </div>
+                </section>
+    
+                <section class="yield-section">
+                    <div class="chart-wrapper flow">
+                        <h3 class="chart-title text-lg">Rendement par Année</h3>
+                        <div class="chart"></div>
+                    </div>
                 </section>
             </div>
         </main>
