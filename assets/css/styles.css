@@ -136,7 +136,7 @@
     /****************************** HEADER & NAV ******************************/
 
     /****************************** STATS SECTION ******************************/
-    .stat {
+    .summary-stat {
         border-radius: .5rem;
         background-color: var(--clr-container);
     }
@@ -183,32 +183,23 @@
     /****************************** MAIN ******************************/
     .main .wrapper {
         display: grid;
-        gap: 2rem 4rem;
+        row-gap: 8rem;
         padding-block: 2rem;
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 275px), 1fr));
-
-        .main-section {
-            grid-column: span 2;
-
-            display: grid;
-            row-gap: 5rem;
-        }
-
-        .secondary-section {
-            grid-column: 3 / 4;
-        }
     }
     /****************************** MAIN ******************************/
 
     /****************************** STATS SECTION ******************************/
-    .stats {
+    .summary-stats {
         display: grid;
-        gap: 2rem;
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 185px), 1fr));
+        gap: 1rem 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
     }
 
-    .stat {
+    .summary-stat {
         padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
     /****************************** STATS SECTION ******************************/
 
