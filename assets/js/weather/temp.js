@@ -1,7 +1,7 @@
 const tempChart = new ApexCharts(document.querySelector("#temp-chart"), {
     chart: {
         type: 'line',
-        height: 260,
+        height: 350,
         toolbar: { tools: { download: true, zoom: false, pan: false, reset: false } }
     },
     series: [{

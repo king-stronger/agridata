@@ -1,7 +1,7 @@
 const productionChart = new ApexCharts(document.querySelector("#production-chart"), {
     chart: {
         type: 'bar',
-        height: 280,
+        height: 350,
         toolbar: {
             tools: { download: true, selection: false, zoom: false, zoomin: false, zoomout: false, pan: false, reset: false },
         }

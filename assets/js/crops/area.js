@@ -1,7 +1,7 @@
 const surfaceChart = new ApexCharts(document.querySelector("#surface-chart"), {
     chart: {
         type: 'bar',
-        height: 280,
+        height: 350,
         toolbar: {
             tools: { download: true, selection: false, zoom: false, zoomin: false, zoomout: false, pan: false, reset: false },
         }

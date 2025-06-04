@@ -114,9 +114,10 @@
     /****************************** HEADER & NAV ******************************/
     .header {
         background: var(--clr-white);
+        box-shadow: 0 0 1px 0 var(--clr-text);
         border-bottom: 2px solid var(--clr-container);
     }
-
+    
     .nav {
 
         .nav-item {
@@ -207,9 +208,65 @@
 
 
 @layer layout {
+    /****************************** APP & SECTIONS ******************************/
+    #app {
+        min-height: 100svh;
+    }
+
+    .main {
+        padding-block: 1rem 3rem;
+    }
+
+    section {
+        margin-block: 5rem;
+    }
+
+    section:has(select){
+        margin-bottom: 2rem;
+    }
+
+    section select {
+        margin-left: 1rem;
+        width: fit-content;
+    }
+
+    section:has(select) + * {
+        margin-top: 0;
+    }
+
+    section:last-of-type {
+        margin-bottom: 0;
+    }
+
+    @media (width < 600px) {
+        section:first-of-type {
+            margin-top: 0;
+        }
+    }
+    /****************************** APP & SECTIONS ******************************/
+    
     /****************************** HEADER & NAV ******************************/
     .header {
         padding: 1rem;
+        position: sticky;
+        inset: 0 0 auto 0;
+        z-index: 10;
+    }
+
+    @media (width < 600px) {
+        .header {
+            position: fixed;
+            padding: 0.5rem 0;
+            inset: auto 0 0 0;
+        }
+
+        .nav {
+            justify-content: space-between;
+        }
+
+        .nav-link {
+            display: none;
+        }
     }
     
     .nav {
@@ -224,35 +281,26 @@
     }
     /****************************** HEADER & NAV ******************************/
 
-    /****************************** MAIN ******************************/
-    .main .wrapper {
-        padding-block: 5rem;
-    }
-
-    section {
-        margin-block: 5rem;
-    }
-
-    section:has(select){
-        margin-bottom: 0;
-    }
-
-    section:has(select) + * {
-        margin-top: 0;
-    }
-    /****************************** MAIN ******************************/
-
-
     /****************************** CHARTS ******************************/
     .chart-grid {
         display: grid;
-        column-gap: 2rem;
+        gap: 2rem;
         align-items: center;
         grid-template-columns: 2fr 1fr;
     }
 
     .chart {
         padding: 1rem;
+    }
+
+    @media (width < 900px){
+        .chart-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .chart {
+            padding: .5rem;
+        }
     }
     /****************************** CHARTS ******************************/
 
@@ -271,6 +319,12 @@
         flex-direction: column;
         justify-content: center;
 
+    }
+
+    @media (width < 900px){
+        .stat {
+            padding: 1rem;
+        }
     }
     /****************************** STATS SECTION ******************************/
 }

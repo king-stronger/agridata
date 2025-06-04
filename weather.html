@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Farm management - Overview</title>
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     <div id="app">
@@ -13,19 +12,19 @@
             <div class="wrapper">
                 <nav class="nav">
                     <a href="index" class="nav-item">
-                        <i class="nav-icon bx bx-trash"></i>
+                        <img src="assets/img/overview.svg" alt="">
                         <span class="nav-link">Overview</span>
                     </a>
                     <a href="crops" class="nav-item">
-                        <i class="nav-icon bx bx-trash"></i>
+                        <img src="assets/img/crop.svg" alt="">
                         <span class="nav-link">Crops</span>
                     </a>
                     <a href="weather" class="nav-item is-active">
-                        <i class="nav-icon bx bx-trash"></i>
+                        <img src="assets/img/weather.svg" alt="">
                         <span class="nav-link">Weather</span>
                     </a>
                     <a href="soils" class="nav-item">
-                        <i class="nav-icon bx bx-trash"></i>
+                        <img src="assets/img/soil.svg" alt="">
                         <span class="nav-link">Soils</span>
                     </a>
                 </nav>
@@ -38,26 +37,26 @@
                 <section class="summary-stats-section flow">
                     <h2 class="text-lg">Vue d'ensemble – Météo annuelle</h2>
                     <ul class="stat-list">
-                    <li class="stat">
-                        <strong class="text-xl text-center">1 215 mm</strong>
-                        <span class="text text-center">Cumul annuel de pluie</span>
-                    </li>
-                    <li class="stat">
-                        <strong class="text-xl text-center">30.4 °C</strong>
-                        <span class="text text-center">Température moyenne annuelle</span>
-                    </li>
-                    <li class="stat">
-                        <strong class="text-xl text-center">67%</strong>
-                        <span class="text text-center">Humidité moyenne annuelle</span>
-                    </li>
-                    <li class="stat">
-                        <strong class="text-xl text-center">Août</strong>
-                        <span class="text text-center">Mois le plus pluvieux</span>
-                    </li>
-                    <li class="stat">
-                        <strong class="text-xl text-center">Avril</strong>
-                        <span class="text text-center">Mois le plus chaud</span>
-                    </li>
+                        <li class="stat">
+                            <strong class="text-xl text-center">1 215 mm</strong>
+                            <span class="text text-center">Cumul annuel de pluie</span>
+                        </li>
+                        <li class="stat">
+                            <strong class="text-xl text-center">30.4 °C</strong>
+                            <span class="text text-center">Température moyenne annuelle</span>
+                        </li>
+                        <li class="stat">
+                            <strong class="text-xl text-center">67%</strong>
+                            <span class="text text-center">Humidité moyenne annuelle</span>
+                        </li>
+                        <li class="stat">
+                            <strong class="text-xl text-center">Août</strong>
+                            <span class="text text-center">Mois le plus pluvieux</span>
+                        </li>
+                        <li class="stat">
+                            <strong class="text-xl text-center">Avril</strong>
+                            <span class="text text-center">Mois le plus chaud</span>
+                        </li>
                     </ul>
                 </section>
                 
@@ -78,89 +77,84 @@
                         <option value="decembre">Décembre</option>
                     </select>
                 </section>
-
-                <!-- Données météo du mois sélectionné -->
-                <div id="weather-details">
-                    <!-- Sélecteur de mois -->
                     
-                    <!-- Bloc 1 : Précipitations -->
-                    <section class="weather-section flow">
-                        <h3 class="chart-title text-lg">Précipitations (mm)</h3>
-                        <div class="chart-grid">
-                            <div class="chart-wrapper">
-                                <div class="chart" id="rain-chart"></div>
-                            </div>
-                            <div class="chart-stats flow">
-                                <ul class="stat-list">
-                                    <li class="stat">
-                                        <strong class="text-xl text-center">240 mm</strong>
-                                        <span class="text text-center">Total du mois</span>
-                                    </li>
-                                    <li class="stat">
-                                        <strong class="text-xl text-center">25 mm</strong>
-                                        <span class="text text-center">Jour le plus pluvieux</span>
-                                    </li>
-                                    <li class="stat">
-                                        <strong class="text-xl text-center">9</strong>
-                                        <span class="text text-center">Jours de pluie</span>
-                                    </li>
-                                </ul>
-                            </div>
+                <!-- Bloc 1 : Précipitations -->
+                <section class="weather-section flow">
+                    <h3 class="chart-title text-lg">Précipitations (mm)</h3>
+                    <div class="chart-grid">
+                        <div class="chart-wrapper">
+                            <div class="chart" id="rain-chart"></div>
                         </div>
-                    </section>
-            
-                    <!-- Bloc 2 : Température -->
-                    <section class="weather-section flow">
-                        <h3 class="chart-title text-lg">Température moyenne (°C)</h3>
-                        <div class="chart-grid">
-                            <div class="chart-wrapper">
-                                <div class="chart" id="temp-chart"></div>
-                            </div>
-                            <div class="chart-stats flow">
-                                <ul class="stat-list">
-                                    <li class="stat">
-                                        <strong class="text-xl text-center">29.7 °C</strong>
-                                        <span class="text text-center">Moyenne mensuelle</span>
-                                    </li>
-                                    <li class="stat">
-                                        <strong class="text-xl text-center">37.2 °C</strong>
-                                        <span class="text text-center">Max journalière</span>
-                                    </li>
-                                    <li class="stat">
-                                        <strong class="text-xl text-center">22.4 °C</strong>
-                                        <span class="text text-center">Min journalière</span>
-                                    </li>
-                                </ul>
-                            </div>
+                        <div class="chart-stats flow">
+                            <ul class="stat-list">
+                                <li class="stat">
+                                    <strong class="text-xl text-center">240 mm</strong>
+                                    <span class="text text-center">Total du mois</span>
+                                </li>
+                                <li class="stat">
+                                    <strong class="text-xl text-center">25 mm</strong>
+                                    <span class="text text-center">Jour le plus pluvieux</span>
+                                </li>
+                                <li class="stat">
+                                    <strong class="text-xl text-center">9</strong>
+                                    <span class="text text-center">Jours de pluie</span>
+                                </li>
+                            </ul>
                         </div>
-                    </section>
-            
-                    <!-- Bloc 3 : Humidité -->
-                    <section class="weather-section flow">
-                        <h3 class="chart-title text-lg">Humidité moyenne (%)</h3>
-                        <div class="chart-grid">
-                            <div class="chart-wrapper">
-                                <div class="chart" id="humidity-chart"></div>
-                            </div>
-                            <div class="chart-stats flow">
-                                <ul class="stat-list">
-                                    <li class="stat">
-                                        <strong class="text-xl text-center">73%</strong>
-                                        <span class="text text-center">Humidité moyenne</span>
-                                    </li>
-                                    <li class="stat">
-                                        <strong class="text-xl text-center">91%</strong>
-                                        <span class="text text-center">Jour le plus humide</span>
-                                    </li>
-                                    <li class="stat">
-                                        <strong class="text-xl text-center">55%</strong>
-                                        <span class="text text-center">Jour le plus sec</span>
-                                    </li>
-                                </ul>
-                            </div>
+                    </div>
+                </section>
+        
+                <!-- Bloc 2 : Température -->
+                <section class="weather-section flow">
+                    <h3 class="chart-title text-lg">Température moyenne (°C)</h3>
+                    <div class="chart-grid">
+                        <div class="chart-wrapper">
+                            <div class="chart" id="temp-chart"></div>
                         </div>
-                    </section>
-                </div>
+                        <div class="chart-stats flow">
+                            <ul class="stat-list">
+                                <li class="stat">
+                                    <strong class="text-xl text-center">29.7 °C</strong>
+                                    <span class="text text-center">Moyenne mensuelle</span>
+                                </li>
+                                <li class="stat">
+                                    <strong class="text-xl text-center">37.2 °C</strong>
+                                    <span class="text text-center">Max journalière</span>
+                                </li>
+                                <li class="stat">
+                                    <strong class="text-xl text-center">22.4 °C</strong>
+                                    <span class="text text-center">Min journalière</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+        
+                <!-- Bloc 3 : Humidité -->
+                <section class="weather-section flow">
+                    <h3 class="chart-title text-lg">Humidité moyenne (%)</h3>
+                    <div class="chart-grid">
+                        <div class="chart-wrapper">
+                            <div class="chart" id="humidity-chart"></div>
+                        </div>
+                        <div class="chart-stats flow">
+                            <ul class="stat-list">
+                                <li class="stat">
+                                    <strong class="text-xl text-center">73%</strong>
+                                    <span class="text text-center">Humidité moyenne</span>
+                                </li>
+                                <li class="stat">
+                                    <strong class="text-xl text-center">91%</strong>
+                                    <span class="text text-center">Jour le plus humide</span>
+                                </li>
+                                <li class="stat">
+                                    <strong class="text-xl text-center">55%</strong>
+                                    <span class="text text-center">Jour le plus sec</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
             </div>
         </main>                        
     </div>

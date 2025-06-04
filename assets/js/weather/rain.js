@@ -1,7 +1,7 @@
 const rainChart = new ApexCharts(document.querySelector("#rain-chart"), {
     chart: {
         type: 'bar',
-        height: 260,
+        height: 350,
         toolbar: { tools: { download: true, zoom: false, pan: false, reset: false } }
     },
     series: [{

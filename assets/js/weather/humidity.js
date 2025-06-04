@@ -1,7 +1,7 @@
 const humidityChart = new ApexCharts(document.querySelector("#humidity-chart"), {
     chart: {
         type: 'area',
-        height: 260,
+        height: 350,
         toolbar: { tools: { download: true, zoom: false, pan: false, reset: false } }
     },
     series: [{

@@ -1,7 +1,7 @@
 const soilTypeChart = new ApexCharts(document.querySelector("#soil-type-chart"), {
     chart: {
         type: 'donut',
-        height: 260,
+        height: 350,
         toolbar: { tools: { download: true } }
     },
     labels: ['Argileux', 'Limoneux', 'Sableux'],

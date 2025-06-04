@@ -1,7 +1,7 @@
 const nutrientsChart = new ApexCharts(document.querySelector("#nutrients-chart"), {
     chart: {
         type: 'bar',
-        height: 260,
+        height: 350,
         toolbar: { tools: { download: true } }
     },
     plotOptions: {

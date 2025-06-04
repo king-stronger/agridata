@@ -1,7 +1,7 @@
 const yieldChart = new ApexCharts(document.querySelector("#yield-chart"), {
     chart: {
         type: 'line',
-        height: 280,
+        height: 350,
         toolbar: {
             tools: { download: true, selection: false, zoom: false, zoomin: false, zoomout: false, pan: false, reset: false },
         }
