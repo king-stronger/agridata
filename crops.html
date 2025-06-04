@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+            <div class="wrapper">
+                <nav class="nav">
+                    <div class="nav-item">
+                        <i class="nav-icon bx bx-trash"></i>
+                        <a href="/index" class="nav-link">Overview</a>
+                    </div>
+                    <div class="nav-item is-active">
+                        <i class="nav-icon bx bx-trash"></i>
+                        <a href="/crops" class="nav-link">Crops</a>
+                    </div>
+                    <div class="nav-item">
+                        <i class="nav-icon bx bx-trash"></i>
+                        <a href="/weather" class="nav-link">Weather</a>
+                    </div>
+                    <div class="nav-item">
+                        <i class="nav-icon bx bx-trash"></i>
+                        <a href="/soils" class="nav-link">Soils</a>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        
+        <main class="main">
+            <div class="wrapper">
+                <!-- Vue d'ensemble sur toutes les cultures -->
+                <section class="summary-stats-section flow">
+                    <h2 class="text-lg">Vue d'ensemble – Toutes les cultures</h2>
+                    <ul class="stat-list">
+                        <li class="stat">
+                            <strong class="text-xl text-center">54 200 T</strong>
+                            <span class="text text-center">Production totale</span>
+                        </li>
+                        <li class="stat">
+                            <strong class="text-xl text-center">142 Ha</strong>
+                            <span class="text text-center">Surface récoltée</span>
+                        </li>
+                        <li class="stat">
+                            <strong class="text-xl text-center">3.81 T/Ha</strong>
+                            <span class="text text-center">Rendement moyen global</span>
+                        </li>
+                        <li class="stat">
+                            <strong class="text-xl text-center">Mil</strong>
+                            <span class="text text-center">Culture dominante</span>
+                        </li>
+                        <li class="stat">
+                            <strong class="text-xl text-center">7</strong>
+                            <span class="text text-center">Cultures suivies</span>
+                        </li>
+                    </ul>
+                </section>
+            
+                <!-- Sélecteur de culture -->
+                <section class="flow">
+                    <label for="crop-select" class="text-lg">Sélectionner une culture :</label>
+                    <select id="crop-select" class="select">
+                        <option value="mil">Mil</option>
+                        <option value="mais">Maïs</option>
+                        <option value="sorgho">Sorgho</option>
+                    </select>
+                </section>
+            
+                <div id="crop-details" class="crop-details">
+                    <!-- Bloc 1 : Production -->
+                    <section class="crop-section flow">
+                        <h3 class="chart-title text-lg">Production mensuelle (T)</h3>
+                        <div class="chart-grid">
+                            <div class="chart-wrapper">
+                                <div class="chart" id="production-chart"></div>
+                            </div>
+                            <div class="chart-stats flow">
+                                <ul class="stat-list">
+                                    <li class="stat">
+                                        <strong class="text-xl text-center">1 025 T</strong>
+                                        <span class="text text-center">Production max. en août</span>
+                                    </li>
+                                    <li class="stat">
+                                        <strong class="text-xl text-center">315 T</strong>
+                                        <span class="text text-center">Min. en février</span>
+                                    </li>
+                                    <li class="stat">
+                                        <strong class="text-xl text-center">12 300 T</strong>
+                                        <span class="text text-center">Total annuel</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+            
+                    <!-- Bloc 2 : Surface récoltée -->
+                    <section class="crop-section flow">
+                        <h3 class="chart-title text-lg">Surface récoltée (Ha)</h3>
+                        <div class="chart-grid">
+                            <div class="chart-wrapper">
+                                <div class="chart" id="surface-chart"></div>
+                            </div>
+                            <div class="chart-stats flow">
+                                <ul class="stat-list">
+                                    <li class="stat">
+                                        <strong class="text-xl text-center">6.2 Ha</strong>
+                                        <span class="text text-center">Max. en septembre</span>
+                                    </li>
+                                    <li class="stat">
+                                        <strong class="text-xl text-center">1.8 Ha</strong>
+                                        <span class="text text-center">Min. en février</span>
+                                    </li>
+                                    <li class="stat">
+                                        <strong class="text-xl text-center">28 Ha</strong>
+                                        <span class="text text-center">Total annuel</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+            
+                    <!-- Bloc 3 : Rendement -->
+                    <section class="crop-section flow">
+                        <h3 class="chart-title text-lg">Rendement par mois (T/Ha)</h3>
+                        <div class="chart-grid">
+                            <div class="chart-wrapper">
+                                <div class="chart" id="yield-chart"></div>
+                            </div>
+                            <div class="chart-stats flow">
+                                <ul class="stat-list">
+                                    <li class="stat">
+                                        <strong class="text-xl text-center">5.2 T/Ha</strong>
+                                        <span class="text text-center">Rendement max. (juillet)</span>
+                                    </li>
+                                    <li class="stat">
+                                        <strong class="text-xl text-center">2.7 T/Ha</strong>
+                                        <span class="text text-center">Min. (mars)</span>
+                                    </li>
+                                    <li class="stat">
+                                        <strong class="text-xl text-center">4.1 T/Ha</strong>
+                                        <span class="text text-center">Moyenne annuelle</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>          
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script>
+        const mois = ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Août', 'Sep', 'Oct', 'Nov', 'Déc'];
+    </script>
+    <script src="/assets/js/crops/production.js"></script>
+    <script src="/assets/js/crops/area.js"></script>
+    <script src="/assets/js/crops/yield.js"></script>
+</body>
+</html>

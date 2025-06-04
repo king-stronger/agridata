@@ -14,7 +14,7 @@
                 <nav class="nav">
                     <div class="nav-item is-active">
                         <i class="nav-icon bx bx-trash"></i>
-                        <a href="/overview" class="nav-link">Overview</a>
+                        <a href="/index" class="nav-link">Overview</a>
                     </div>
                     <div class="nav-item">
                         <i class="nav-icon bx bx-trash"></i>
@@ -26,7 +26,7 @@
                     </div>
                     <div class="nav-item">
                         <i class="nav-icon bx bx-trash"></i>
-                        <a href="/Soil" class="nav-link">Soils</a>
+                        <a href="/soils" class="nav-link">Soils</a>
                     </div>
                 </nav>
             </div>
@@ -34,91 +34,126 @@
 
         <main class="main">
             <div class="wrapper">
+                <!-- Résumé haut niveau -->
                 <section class="summary-stats-section flow">
-                    <h2 class="text-lg">Summary</h2>
-                    <ul class="summary-stats">
-                        <li class="summary-stat">
-                            <h3 class="text">Nombre de Parcelles</h3>
-                            <span class="text-xl">25</span>
+                    <h2 class="text-lg">Vue d'ensemble</h2>
+                    <ul class="stat-list">
+                        <li class="stat">
+                            <strong class="text-xl">17 500 T</strong>
+                            <span class="text">Production Totale</span>
                         </li>
-                        <li class="summary-stat">
-                            <h3 class="text">Nombre de Cultures</h3>
-                            <span class="text-xl">7</span>
+                        <li class="stat">
+                            <strong class="text-xl">43 Ha</strong>
+                            <span class="text">Superficie Cultivée</span>
                         </li>
-                        <li class="summary-stat">
-                            <h3 class="text">Production Totale</h3>
-                            <span class="text-xl">17 500 T</span>
-                        </li>
-                        <li class="summary-stat">
-                            <h3 class="text">Superficie Totale Récoltée</h3>
-                            <span class="text-xl">43 Ha</span>
-                        </li>
-                        <li class="summary-stat">
-                            <h3 class="text">Rendement Total</h3>
-                            <span class="text-xl">400,2 T/Ha</span>
-                        </li>
-                    </ul>                
-                </section>
-
-                <section class="weather-section">
-                    <h2 class="text-lg">Weather forecast</h2>
-                    <div class="weather-actual">
-                        <img src="/assets/img/icon.png" alt="Weather icon">
-                        <div class="weather-info">
-                            <span class="text-md">Today</span>
-                            <span class="text-xl">37 / 23</span>
-                            <span class="text-sm">Rainy Cloudy</span>
-                        </div>
-                    </div>
-                    <ul class="weather-forecast">
-                        <li class="weather">
-                            <h3 class="text-center">25 June</h3>
-                            <span class="text-xxl">29</span>
-                            <span class="text-sm">Thunderstorm</span>
-                        </li>
-                        <li class="weather">
-                            <h3 class="text-center">26 June</h3>
-                            <span class="text-xxl">32</span>
-                            <span class="text-sm">Rainy Cloudy</span>
-                        </li>
-                        <li class="weather">
-                            <h3 class="text-center">27 June</h3>
-                            <span class="text-xxl">39</span>
-                            <span class="text-sm">Semi cloudy</span>
-                        </li>
-                        <li class="weather">
-                            <h3 class="text-center">28 June</h3>
-                            <span class="text-xxl">42</span>
-                            <span class="text-sm">Sunny - humidity</span>
+                        <li class="stat">
+                            <strong class="text-xl">400,2 T/Ha</strong>
+                            <span class="text">Rendement Moyen</span>
                         </li>
                     </ul>
                 </section>
-
-                <section class="production-section">
-                    <div class="chart-wrapper flow">
-                        <h3 class="chart-title text-lg">Production Totale par Année</h3>
-                        <div class="chart"></div>
+        
+                <!-- Rendement mensuel + stats -->
+                <section class="yield-by-month-section flow">
+                    <h3 class="chart-title text-lg">Rendement par Mois (T/Ha)</h3>
+                    <div class="chart-grid">
+                        <div class="chart-wrapper">
+                            <div class="chart" id="yield-monthly-chart"></div>
+                        </div>
+                        <div class="chart-stats flow">
+                            <ul class="stat-list">
+                                <li class="stat">
+                                    <strong class="text-xl text-center">3.9 T/Ha</strong>
+                                    <span class="text text-center">Moyenne annuelle</span>
+                                </li>
+                                <li class="stat">
+                                    <strong class="text-center">
+                                        <p class="text-xl">Août</p>
+                                        <p class="text">(5.2 T/Ha)</p>
+                                    </strong>
+                                    <span class="text text-center">Meilleur mois</span>
+                                </li>
+                                <li class="stat">
+                                    <strong class="text-center">
+                                        <p class="text-xl">Février</p>
+                                        <p class="text">(2.1 T/Ha)</p>
+                                    </strong>
+                                    <span class="text text-center">Pire mois</span>
+                                </li>
+                                <li class="stat">
+                                    <strong class="text-xl text-center">0.6</strong>
+                                    <span class="text text-center">Écart-type</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </section>
-    
-                <section class="area-harvested-section">
-                    <div class="chart-wrapper flow">
-                        <h3 class="chart-title text-lg">Superficie Récoltée par Année</h3>
-                        <div class="chart"></div>
+            
+                <!-- Météo combinée -->
+                <section class="weather-overview-section flow">
+                    <h3 class="chart-title text-lg">Température & Pluie par Mois</h3>
+                    <div class="chart-grid">
+                        <div class="chart-wrapper">
+                            <div class="chart" id="weather-combo-chart"></div>
+                        </div>
+                        <div class="chart-stats flow">
+                            <ul class="stat-list">
+                                <li class="stat">
+                                    <strong class="text-xl text-center">890 mm</strong>
+                                    <span class="text text-center">Pluie annuelle</span>
+                                </li>
+                                <li class="stat">
+                                    <strong class="text-xl text-center">
+                                        <p class="text-xl">Août</p>
+                                        <p class="text">(210 mm)</p>
+                                    </strong>
+                                    <span class="text text-center">Mois le plus pluvieux</span>
+                                </li>
+                                <li class="stat">
+                                    <strong class="text-xl text-center">31.2 °C</strong>
+                                    <span class="text text-center">Temp. moyenne</span>
+                                </li>
+                                <li class="stat">
+                                    <strong class="text-xl text-center">42 jours</strong>
+                                    <span class="text text-center">Jours > 35°C</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </section>
-    
-                <section class="yield-section">
-                    <div class="chart-wrapper flow">
-                        <h3 class="chart-title text-lg">Rendement par Année</h3>
-                        <div class="chart"></div>
+            
+                <!-- Fertilité des sols -->
+                <section class="soil-overview-section flow">
+                    <h3 class="chart-title text-lg">Répartition des Sols</h3>
+                    <div class="chart-grid">
+                        <div class="chart-wrapper flow">
+                            <div class="chart" id="soil-fertility-chart"></div>
+                        </div>
+                        <div class="chart-stats flow">
+                            <ul class="stat-list">
+                                <li class="stat">
+                                    <strong class="text-xl text-center">58%</strong>
+                                    <span class="text text-center">Sols fertiles</span>
+                                </li>
+                                <li class="stat">
+                                    <strong class="text-xl text-center">6.4</strong>
+                                    <span class="text text-center">pH moyen</span>
+                                </li>
+                                <li class="stat">
+                                    <strong class="text-xl text-center">Zone A1</strong>
+                                    <span class="text text-center">Parcelle la plus fertile</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </section>
             </div>
-        </main>
+        </main>          
     </div>
 
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="/assets/js/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="assets/js/overview/yield.js"></script>
+    <script src="assets/js/overview/weather.js"></script>
+    <script src="assets/js/overview/soil.js"></script>
 </body>
 </html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm management - Overview</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+            <div class="wrapper">
+                <nav class="nav">
+                    <div class="nav-item">
+                        <i class="nav-icon bx bx-trash"></i>
+                        <a href="/index" class="nav-link">Overview</a>
+                    </div>
+                    <div class="nav-item">
+                        <i class="nav-icon bx bx-trash"></i>
+                        <a href="/crops" class="nav-link">Crops</a>
+                    </div>
+                    <div class="nav-item">
+                        <i class="nav-icon bx bx-trash"></i>
+                        <a href="/weather" class="nav-link">Weather</a>
+                    </div>
+                    <div class="nav-item is-active">
+                        <i class="nav-icon bx bx-trash"></i>
+                        <a href="/soils" class="nav-link">Soils</a>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="wrapper">
+        
+            <!-- Vue d'ensemble des sols -->
+            <section class="summary-stats-section flow">
+                <h2 class="text-lg">Vue d'ensemble – Sols agricoles</h2>
+                <ul class="stat-list">
+                <li class="stat">
+                    <strong class="text-xl text-center">5 types</strong>
+                    <span class="text text-center">Types de sols identifiés</span>
+                </li>
+                <li class="stat">
+                    <strong class="text-xl text-center">38%</strong>
+                    <span class="text text-center">Zones à fertilité faible</span>
+                </li>
+                <li class="stat">
+                    <strong class="text-xl text-center">21</strong>
+                    <span class="text text-center">Parcelles analysées</span>
+                </li>
+                <li class="stat">
+                    <strong class="text-xl text-center">pH 5.9</strong>
+                    <span class="text text-center">Moyenne d’acidité globale</span>
+                </li>
+                </ul>
+            </section>
+        
+            <!-- Sélecteur de zone ou parcelle -->
+            <section class="flow">
+                <label for="zone-select" class="text-lg">Sélectionner une parcelle :</label>
+                <select id="zone-select" class="select">
+                    <option value="zone-a">Parcelle A</option>
+                    <option value="zone-b">Parcelle B</option>
+                    <option value="zone-c">Parcelle C</option>
+                    <option value="zone-d">Parcelle D</option>
+                </select>
+            </section>
+        
+            <!-- Graphique sur les types de sols -->
+            <section class="soil-section flow">
+                <h3 class="chart-title text-lg">Répartition des types de sols</h3>
+                <div class="chart-grid">
+                    <div class="chart-wrapper">
+                        <div class="chart" id="soil-type-chart"></div>
+                    </div>
+                    <div class="chart-stats flow">
+                        <ul class="stat-list">
+                            <li class="stat">
+                                <strong class="text-xl text-center">42%</strong>
+                                <span class="text text-center">Sol argileux</span>
+                            </li>
+                            <li class="stat">
+                                <strong class="text-xl text-center">30%</strong>
+                                <span class="text text-center">Sol limoneux</span>
+                            </li>
+                            <li class="stat">
+                                <strong class="text-xl text-center">28%</strong>
+                                <span class="text text-center">Sol sableux</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        
+            <!-- Graphique sur la fertilité -->
+            <section class="soil-section flow">
+                <h3 class="chart-title text-lg">Éléments nutritifs du sol</h3>
+                <div class="chart-grid">
+                    <div class="chart-wrapper">
+                        <div class="chart" id="nutrients-chart"></div>
+                    </div>
+                    <div class="chart-stats flow">
+                        <ul class="stat-list">
+                        <li class="stat">
+                            <strong class="text-xl text-center">Faible</strong>
+                            <span class="text text-center">Azote</span>
+                        </li>
+                        <li class="stat">
+                            <strong class="text-xl text-center">Moyen</strong>
+                            <span class="text text-center">Phosphore</span>
+                        </li>
+                        <li class="stat">
+                            <strong class="text-xl text-center">Bon</strong>
+                            <span class="text text-center">Potassium</span>
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        
+            <!-- Informations additionnelles (non graphiques) -->
+            <section class="soil-section flow">
+                <h3 class="chart-title text-lg">Propriétés du sol</h3>
+                <ul class="stat-list">
+                    <li class="stat">
+                        <strong class="text-xl">pH 5.8</strong>
+                        <span class="text">Acidité modérée</span>
+                    </li>
+                    <li class="stat">
+                        <strong class="text-xl">65%</strong>
+                        <span class="text">Capacité de rétention d’eau</span>
+                    </li>
+                    <li class="stat">
+                        <strong class="text-xl">Compost + NPK</strong>
+                        <span class="text">Besoins en amendement</span>
+                    </li>
+                </ul>
+            </section>
+        
+            </div>
+        </main>          
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="/assets/js/soils/type.js"></script>
+    <script src="/assets/js/soils/nutrients.js"></script>
+</body>
+</html>

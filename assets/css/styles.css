@@ -5,16 +5,27 @@
 
     /*************** Colors variables ***************/
     --clr-black: hsl(0, 0%, 0%);
-    --clr-dark: hsl(135, 0%, 0%);
-    --clr-text: hsl(135, 0%, 30%);
+    --clr-dark: hsl(60, 0%, 0%);
+    --clr-text: hsl(60, 0%, 30%);
     --clr-link: hsl(200, 71%, 45%);
-    --clr-light: hsl(135, 0%, 100%);
+    --clr-light: hsl(60, 0%, 100%);
     --clr-accent: hsl(30, 71%, 45%);
     --clr-white: hsl(100, 100%, 100%);
-    --clr-primary: hsl(135, 57%, 36%);
-    --clr-container: hsl(135, 46%, 80%);
-    --clr-background: hsl(60, 63%, 96%);
-    --clr-container-alt: hsl(135, 0%, 100%);
+    --clr-primary: hsl(60, 57%, 36%);
+    --clr-container: hsl(60, 5%, 95%);
+    --clr-background: hsl(60, 63%, 97%);
+    --clr-container-alt: hsl(60, 0%, 100%);
+
+    --clr-stat-text-1: hsl(0, 71%, 45%);
+    --clr-stat-text-2: hsl(270, 71%, 45%);
+    --clr-stat-text-3: hsl(150, 71%, 45%);
+    --clr-stat-text-4: hsl(210, 71%, 45%);
+    --clr-stat-text-5: hsl(30, 71%, 45%);
+    --clr-stat-background-1: hsl(0, 72%, 86%);
+    --clr-stat-background-2: hsl(270, 72%, 86%);
+    --clr-stat-background-3: hsl(150, 72%, 86%);
+    --clr-stat-background-4: hsl(210, 72%, 86%);
+    --clr-stat-background-5: hsl(30, 72%, 86%);
 
 
 
@@ -103,6 +114,7 @@
     /****************************** HEADER & NAV ******************************/
     .header {
         background: var(--clr-white);
+        border-bottom: 2px solid var(--clr-container);
     }
 
     .nav {
@@ -116,6 +128,7 @@
         }
 
         .nav-item:hover {
+            cursor: pointer;
             border-radius: .5rem;
             outline: 1px solid var(--clr-accent);
             
@@ -135,30 +148,61 @@
     }
     /****************************** HEADER & NAV ******************************/
 
-    /****************************** STATS SECTION ******************************/
-    .summary-stat {
-        border-radius: .5rem;
-        background-color: var(--clr-container);
-    }
-    /****************************** STATS SECTION ******************************/
-
-
-
-    /****************************** WEATHER SECTION ******************************/
-    .weather {
-        border-radius: .5rem;
-        background: var(--clr-container);
-    }
-    /****************************** WEATHER SECTION ******************************/
-
-
-    /****************************** CHART SECTIONS ******************************/
+    /****************************** CHARTS ******************************/
     .chart {
         border-radius: 1rem;
         background-color: var(--clr-white);
-        box-shadow: 0 0 1px 0 var(--clr-container);
+        box-shadow: 0 0 1px 0 var(--clr-text);
     }
-    /****************************** CHART SECTIONS ******************************/
+    /****************************** CHARTS ******************************/
+
+    /****************************** STATS SECTION ******************************/
+    .stat {
+        border-radius: .5rem;
+        background-color: var(--clr-white);
+        border: 2px solid var(--clr-container);
+    }
+
+    .chart-stats .stat:nth-of-type(1) strong {
+        color: var(--clr-stat-text-1);
+    }
+
+    .chart-stats .stat:nth-of-type(2) strong {
+        color: var(--clr-stat-text-2);
+    }
+
+    .chart-stats .stat:nth-of-type(3) strong {
+        color: var(--clr-stat-text-3);
+    }
+
+    .chart-stats .stat:nth-of-type(4) strong {
+        color: var(--clr-stat-text-4);
+    }
+    
+    .chart-stats .stat:nth-of-type(5) strong {
+        color: var(--clr-stat-text-5);
+    }
+
+    .summary-stats-section .stat:nth-of-type(1) {
+        background-color: var(--clr-stat-background-1);
+    }
+
+    .summary-stats-section .stat:nth-of-type(2) {
+        background-color: var(--clr-stat-background-2);
+    }
+
+    .summary-stats-section .stat:nth-of-type(3) {
+        background-color: var(--clr-stat-background-3);
+    }
+
+    .summary-stats-section .stat:nth-of-type(4) {
+        background-color: var(--clr-stat-background-4);
+    }
+    
+    .summary-stats-section .stat:nth-of-type(5) {
+        background-color: var(--clr-stat-background-5);
+    }
+    /****************************** STATS SECTION ******************************/
 }
 
 
@@ -182,63 +226,53 @@
 
     /****************************** MAIN ******************************/
     .main .wrapper {
-        display: grid;
-        row-gap: 8rem;
-        padding-block: 2rem;
+        padding-block: 5rem;
+    }
+
+    section {
+        margin-block: 5rem;
+    }
+
+    section:has(select){
+        margin-bottom: 0;
+    }
+
+    section:has(select) + * {
+        margin-top: 0;
     }
     /****************************** MAIN ******************************/
 
-    /****************************** STATS SECTION ******************************/
-    .summary-stats {
+
+    /****************************** CHARTS ******************************/
+    .chart-grid {
         display: grid;
-        gap: 1rem 2rem;
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+        column-gap: 2rem;
+        align-items: center;
+        grid-template-columns: 2fr 1fr;
     }
 
-    .summary-stat {
-        padding: 1rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    /****************************** STATS SECTION ******************************/
-
-
-    /****************************** WEATHER SECTION ******************************/
-    .weather-section {
-        display: grid;
-        row-gap: 2rem;
-    }
-
-    .weather-actual {
-        gap: 2rem;
-        display: flex;
-    }
-
-    .weather-info {
-        display: grid;
-    }
-
-    .weather-forecast {
-        display: grid;
-        gap: 2rem;
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
-    }
-
-    .weather {
-        display: flex;
-        row-gap: 1rem;
-        padding: 1rem;
-        flex-direction: column;
-    }
-    /****************************** WEATHER SECTION ******************************/
-
-
-    /****************************** CHART SECTIONS ******************************/
     .chart {
         padding: 1rem;
     }
-    /****************************** CHART SECTIONS ******************************/
+    /****************************** CHARTS ******************************/
+
+    /****************************** STATS SECTION ******************************/
+    .stat-list {
+        display: grid;
+        gap: 2rem 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+    }
+
+    .stat {
+        display: flex;
+        padding: 2rem;
+        row-gap: .5rem;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+    /****************************** STATS SECTION ******************************/
 }
 
 
